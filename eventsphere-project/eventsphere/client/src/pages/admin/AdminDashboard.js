@@ -16,8 +16,6 @@ export default function AdminDashboard() {
       setExpos(Array.isArray(e.data) ? e.data : []);
       setPending(Array.isArray(ex.data) ? ex.data : []);
     }).finally(() => setLoading(false));
-      setPending(ex.data);
-    }).finally(() => setLoading(false));
   }, []);
 
   if (loading) return <div className="spinner" />;
@@ -32,7 +30,6 @@ export default function AdminDashboard() {
         <h1 className="page-title">⚙️ Admin Dashboard</h1>
         <Link to="/admin/expos" className="btn btn-primary">+ Create Expo</Link>
       </div>
-
       <div className="admin-stats">
         {[
           { icon: '🎪', label: 'Total Expos', value: expos.length, color: '#6366f1' },
@@ -48,7 +45,6 @@ export default function AdminDashboard() {
           </div>
         ))}
       </div>
-
       <div className="admin-panels">
         <div className="card admin-panel">
           <div className="panel-header">
@@ -66,7 +62,6 @@ export default function AdminDashboard() {
             </div>
           ))}
         </div>
-
         <div className="card admin-panel">
           <div className="panel-header">
             <h3>⏰ Pending Exhibitor Applications</h3>
