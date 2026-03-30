@@ -1,0 +1,21 @@
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+.application-card { overflow: hidden; }
+.app-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px; border-bottom: 1px solid var(--gray-100);
+}
+.app-logo {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 18px; flex-shrink: 0;
+}
+.app-header div { flex: 1; }
+.app-header h3 { font-size: 15px; font-weight: 600; }
+.app-header p { font-size: 12px; color: var(--gray-500); }
+.app-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--gray-600); }
+.app-approved { padding: 10px 20px; background: #d1fae5; font-size: 13px; color: #065f46; font-weight: 500; }

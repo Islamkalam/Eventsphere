@@ -1,0 +1,72 @@
+.expo-detail { margin: -32px; }
+
+.expo-hero {
+  padding: 60px 40px 40px;
+  color: white;
+}
+.expo-hero-content { max-width: 700px; }
+.expo-hero h1 { font-size: 36px; font-weight: 800; margin: 12px 0 8px; }
+.expo-hero-theme { font-size: 14px; opacity: 0.85; margin-bottom: 16px; }
+.expo-hero-meta { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; opacity: 0.9; margin-bottom: 24px; }
+
+.expo-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--gray-200);
+  background: white;
+  padding: 0 32px;
+}
+.tab-btn {
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: capitalize;
+}
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+.tab-btn:hover { color: var(--primary); }
+
+.expo-tab-content { padding: 32px; }
+
+.overview-grid { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; }
+.overview-card { padding: 24px; }
+.overview-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.overview-card p { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
+.overview-stats { display: flex; flex-direction: column; gap: 12px; }
+.stat-card { padding: 16px; display: flex; align-items: center; gap: 12px; }
+.stat-icon { font-size: 24px; }
+.stat-card strong { font-size: 20px; font-weight: 700; }
+.stat-card span { font-size: 12px; color: var(--gray-500); }
+
+.sessions-list { display: flex; flex-direction: column; gap: 12px; }
+.session-card { display: flex; align-items: flex-start; gap: 16px; padding: 20px; }
+.session-info { flex: 1; }
+.session-info h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.session-info p { font-size: 13px; color: var(--gray-500); margin-bottom: 4px; }
+.session-desc { color: var(--gray-500); font-size: 13px; margin-top: 6px; }
+.session-cap { text-align: center; font-size: 13px; color: var(--gray-500); }
+.session-cap strong { display: block; font-size: 18px; color: var(--gray-900); }
+
+.exhibitor-card { padding: 20px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.exhibitor-avatar {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700;
+}
+.exhibitor-card h4 { font-size: 15px; font-weight: 600; }
+.exhibitor-card p { font-size: 13px; color: var(--gray-500); }
+.booth-num { font-size: 12px; font-weight: 600; color: var(--primary); }
+
+@media (max-width: 768px) {
+  .expo-hero { padding: 32px 20px 24px; }
+  .expo-tabs { padding: 0 16px; }
+  .expo-tab-content { padding: 20px 16px; }
+  .overview-grid { grid-template-columns: 1fr; }
+  .expo-hero-meta { gap: 10px; }
+}
