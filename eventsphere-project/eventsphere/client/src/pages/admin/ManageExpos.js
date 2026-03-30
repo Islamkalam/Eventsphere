@@ -13,7 +13,7 @@ export default function ManageExpos() {
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState('');
 
-  const load = () => expoAPI.getAll().then(r => setExpos(r.data)).finally(() => setLoading(false));
+  const load = () => expoAPI.getAll().then(r => setExpos(Array.isArray(r.data) ? r.data : [])).finally(() => setLoading(false));
   useEffect(() => { load(); }, []);
 
   const openCreate = () => { setForm(emptyForm); setEditing(null); setModal(true); };
