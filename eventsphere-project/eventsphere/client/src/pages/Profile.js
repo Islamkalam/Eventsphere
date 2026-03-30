@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { authAPI } from '../utils/api';
 
 export default function Profile() {
-  const { user, login } = useAuth();
+  const { user } = useAuth();
   const [form, setForm] = useState({ name: user?.name || '', company: user?.company || '', phone: user?.phone || '' });
   const [msg, setMsg] = useState('');
   const [loading, setLoading] = useState(false);
