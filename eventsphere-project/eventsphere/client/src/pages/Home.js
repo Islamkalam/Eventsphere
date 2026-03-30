@@ -7,7 +7,9 @@ export default function Home() {
   const [expos, setExpos] = useState([]);
 
   useEffect(() => {
-    expoAPI.getAll({ status: 'upcoming' }).then(res => setExpos(res.data.slice(0, 3))).catch(() => {});
+    expoAPI.getAll({ status: 'upcoming' })
+      .then(res => setExpos(Array.isArray(res.data) ? res.data.slice(0, 3) : []))
+      .catch(() => setExpos([]));
   }, []);
 
   return (
