@@ -6,9 +6,10 @@ export default function MyBookings() {
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState('expos');
 
-  useEffect(() => {
-    bookingAPI.getMy().then(r => setData(r.data)).finally(() => setLoading(false));
-  }, []);
+  bookingAPI.getMy().then(r => setData({
+      expos: Array.isArray(r.data?.expos) ? r.data.expos : [],
+      sessions: Array.isArray(r.data?.sessions) ? r.data.sessions : []
+    })).finally(() => setLoading(false));
 
   if (loading) return <div className="spinner" />;
 
