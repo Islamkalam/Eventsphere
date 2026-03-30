@@ -13,7 +13,9 @@ export default function AdminDashboard() {
       expoAPI.getAll(),
       exhibitorAPI.getAll({ status: 'pending' })
     ]).then(([e, ex]) => {
-      setExpos(e.data);
+      setExpos(Array.isArray(e.data) ? e.data : []);
+      setPending(Array.isArray(ex.data) ? ex.data : []);
+    }).finally(() => setLoading(false));
       setPending(ex.data);
     }).finally(() => setLoading(false));
   }, []);
