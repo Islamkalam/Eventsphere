@@ -12,8 +12,8 @@ export default function ExpoList() {
   useEffect(() => {
     setLoading(true);
     expoAPI.getAll({ search, status })
-      .then(res => setExpos(res.data))
-      .catch(() => {})
+      .then(res => setExpos(Array.isArray(res.data) ? res.data : []))
+      .catch(() => setExpos([]))
       .finally(() => setLoading(false));
   }, [search, status]);
 
