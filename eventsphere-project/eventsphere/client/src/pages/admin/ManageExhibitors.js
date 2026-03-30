@@ -12,7 +12,7 @@ export default function ManageExhibitors() {
   const load = () => {
     setLoading(true);
     exhibitorAPI.getAll({ status: filter || undefined })
-      .then(r => setExhibitors(r.data))
+      .then(r => setExhibitors(Array.isArray(r.data) ? r.data : []))
       .finally(() => setLoading(false));
   };
   
