@@ -15,6 +15,8 @@ export default function ManageExhibitors() {
       .then(r => setExhibitors(r.data))
       .finally(() => setLoading(false));
   };
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { load(); }, [filter]);
 
   const handleStatus = async (id, status) => {
